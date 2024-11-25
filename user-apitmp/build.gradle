@@ -19,16 +19,10 @@ configurations {
         extendsFrom annotationProcessor
     }
 }
-bootJar {
-    enabled = true
-}
-jar {
-    enabled = false
-}
 
 dependencies {
 
-    implementation project(path:":zerobase-domain")
+    implementation project(path: ":zerobase-domain")
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -62,5 +56,3 @@ java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
 }
-
-tasks.register("prepareKotlinBuildScriptModel"){}

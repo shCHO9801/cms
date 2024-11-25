@@ -1,11 +1,15 @@
 plugins {
     id 'org.springframework.boot' version '2.6.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'java'
+    id 'java-library'
+//    id 'java'
 }
 
-version = "unspecified"
-sourceCompatibility = '11'
+bootJar{enabled = false}
+jar{enabled = true}
+
+group 'com.zerobase.domain'
+version '1.0.0'
 
 repositories {
     mavenCentral()
@@ -21,16 +25,11 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
 }
 
-subprojects {
-    apply plugin: 'java'
-
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
-
-    dependencies {
-    }
-}
-
 test {
     useJUnitPlatform()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
