@@ -13,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static com.zerobase.cms.user.exception.ErrorCode.NOT_FOUND_USER;
+
 @RestController
 @RequestMapping("/customer")
 @RequiredArgsConstructor
@@ -22,13 +24,13 @@ public class CustomerController {
     private final CustomerService customerService;
     private final CustomerBalanceService customerBalanceService;
 
-    @GetMapping("getInfo")
+    @GetMapping("/getInfo")
     public ResponseEntity<CustomerDto> getInfo(
             @RequestHeader(name = "X-AUTH-TOKEN") String token
     ) {
         UserVo vo = provider.getUserVo(token);
-        Customer c = customerService.findByIdAndEmail(vo.getId(), vo.getEmail()).orElseThrow(
-                () -> new CustomException(ErrorCode.NOT_FOUND_USER)
+        Customer c = customerService.findByIdAndEmail(vo.getId(), vo.getEmail())
+                .orElseThrow(() -> new CustomException(NOT_FOUND_USER)
         );
         return ResponseEntity.ok(CustomerDto.from(c));
     }

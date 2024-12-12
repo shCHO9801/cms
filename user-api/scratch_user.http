@@ -1,0 +1,46 @@
+
+### 회원가입 (고객)
+POST http://localhost:8081/signup/customer
+Content-Type: application/json
+
+{
+  "birth": "1998-12-12",
+  "email": "csh980116@gmail.com",
+  "name": "myName",
+  "password": "pw",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 (고객)
+GET http://localhost:8081/signup/customer/verify?email=csh980116@gmail.com&code=M0DRpMSIX4
+
+### 로그인 (고객)
+POST http://localhost:8081/signIn/customer
+Content-Type: application/json
+
+{
+  "email": "csh980116@gmail.com",
+  "password": "pw"
+}
+
+### 회원 정보 조회 (고객)
+GET http://localhost:8081/customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhvenJoNXRDaG15eXBpUlpSNkRrPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MzQwMTk3MDcsImV4cCI6MTczNDEwNjEwN30.zw0qWXa9dQgQiZAbtOVAyk-YI7fpyodMNRrFfO0Om4Q
+
+### 잔액 변경 (고객)
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhvenJoNXRDaG15eXBpUlpSNkRrPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE3MzQwMTk3MDcsImV4cCI6MTczNDEwNjEwN30.zw0qWXa9dQgQiZAbtOVAyk-YI7fpyodMNRrFfO0Om4Q
+
+{
+  "from": "server",
+  "message": "돈 충전",
+  "money": -150000
+}
+
+###########################
+
+### 회원가입 (셀러)
+
+### 로그인 (셀러)
