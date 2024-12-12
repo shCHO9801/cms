@@ -35,14 +35,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'mysql:mysql-connector-java'
 
-    implementation 'com.h2database:h2'
-
     implementation 'org.apache.commons:commons-lang3:3.12.0'
 
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation "com.h2database:h2"
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
     implementation 'org.springframework.data:spring-data-envers'
