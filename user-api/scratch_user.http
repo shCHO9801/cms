@@ -49,12 +49,12 @@ Content-Type: application/json
   "birth": "1998-12-12",
   "email": "csh980116@gmail.com",
   "name": "myName",
-  "password": "pw",
+  "password": "my",
   "phone": "01000000000"
 }
 
 ### 이메일 인증 (셀러)
-GET http://localhost:8081/signup/seller/verify?email=csh980116@gmail.com&code=WrjLUjUdyJ
+GET http://localhost:8081/signup/seller/verify?email=csh980116@gmail.com&code=OF9zAzz4tq
 
 
 ### 로그인 (셀러)
@@ -63,5 +63,8 @@ Content-Type: application/json
 
 {
   "email": "csh980116@gmail.com",
-  "password": "pw"
+  "password": "my"
 }
+
+
+
