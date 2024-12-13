@@ -42,5 +42,26 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhve
 ###########################
 
 ### 회원가입 (셀러)
+POST localhost:8081/signup/seller
+Content-Type: application/json
+
+{
+  "birth": "1998-12-12",
+  "email": "csh980116@gmail.com",
+  "name": "myName",
+  "password": "pw",
+  "phone": "01000000000"
+}
+
+### 이메일 인증 (셀러)
+GET http://localhost:8081/signup/seller/verify?email=csh980116@gmail.com&code=WrjLUjUdyJ
+
 
 ### 로그인 (셀러)
+POST localhost:8081/signIn/seller
+Content-Type: application/json
+
+{
+  "email": "csh980116@gmail.com",
+  "password": "pw"
+}
