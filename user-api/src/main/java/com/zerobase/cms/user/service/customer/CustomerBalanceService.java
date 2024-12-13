@@ -38,7 +38,7 @@ public class CustomerBalanceService {
                 .fromMessage(form.getFrom())
                 .customer(customerBalanceHistory.getCustomer())
                 .build();
-        customerBalanceHistory.getCustomer().setBalance(customerBalanceHistory.getChangeMoney());
+        customerBalanceHistory.getCustomer().setBalance(customerBalanceHistory.getCurrentMoney());
 
         return customerBalanceHistoryRepository.save(customerBalanceHistory);
     }
