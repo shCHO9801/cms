@@ -1,7 +1,7 @@
 ### 상품 추가
 POST localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhvenJoNXRDaG15eXBpUlpSNkRrPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzM0MTkxNTI4LCJleHAiOjE3MzQyNzc5Mjh9.MAWAzkb-KA1n0cEcS2jH_AkY9fQwLkI9USRvJIbzNBI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhvenJoNXRDaG15eXBpUlpSNkRrPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNzM0Mjg1MjI4LCJleHAiOjE3MzQzNzE2Mjh9.j64AV9GmtWtpbq-L3KF2nakLl7VOBWohvF086jdxb5w
 
 {
   "description": "상품 설명",
@@ -12,7 +12,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhve
       "price": 10000
     }
   ],
-  "name": "나이키 에어포스"
+  "name": "나이키 에어포스2"
 }
 
 ### 상품 아이템 추가
@@ -88,3 +88,11 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJPeUtZTEJJdXY4am1hOUZ0eTJNbHpNQzhve
   "name": "270",
   "price": 10000
 }
+
+### 상품 검색
+GET localhost:8082/search/product?name=나이키
+Content-Type: application/json
+
+### 상품 디테일 검색
+GET localhost:8082/search/product/detail?productId=1
+Content-Type: application/json
