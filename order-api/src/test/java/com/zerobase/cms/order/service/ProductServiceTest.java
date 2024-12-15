@@ -206,7 +206,7 @@ class ProductServiceTest {
 
         //when
         Product updateProduct =
-                productService.updateProduct(savedProduct.getId(), updateForm);
+                productService.updateProduct(sellerId, updateForm);
 
         //then
         assertNotNull(updateProduct);
