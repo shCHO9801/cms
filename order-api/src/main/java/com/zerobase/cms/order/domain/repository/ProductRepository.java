@@ -13,6 +13,4 @@ public interface ProductRepository extends JpaRepository<Product, Long>, Product
 
     @EntityGraph(attributePaths = {"productItems"}, type = EntityGraph.EntityGraphType.LOAD)
     Optional<Product> findWithProductItemsById(Long id);
-
-
 }
