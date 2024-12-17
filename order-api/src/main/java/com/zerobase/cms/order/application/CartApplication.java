@@ -40,6 +40,20 @@ public class CartApplication {
         return cartService.addCart(customerId, form);
     }
 
+    /**
+     * 엣지 케이스
+     *
+     * @param customerId
+     * @param cart
+     * @return
+     */
+    public Cart updateCart(Long customerId, Cart cart) {
+        // 실질적으로 변하는 데이터
+        // 상품의 삭제, 수량 변경
+        cartService.putCart(customerId, cart);
+        return getCart(customerId);
+    }
+
     public Cart getCart(Long customerId) {
         Cart cart = refreshCart(cartService.getCart(customerId));
         Cart returnCart = new Cart();
