@@ -1,7 +1,6 @@
 package com.zerobase.cms.order.service;
 
 import com.zerobase.cms.order.domain.model.Product;
-import com.zerobase.cms.order.domain.model.ProductItem;
 import com.zerobase.cms.order.domain.product.AddProductForm;
 import com.zerobase.cms.order.domain.product.AddProductItemForm;
 import com.zerobase.cms.order.domain.product.UpdateProductForm;
