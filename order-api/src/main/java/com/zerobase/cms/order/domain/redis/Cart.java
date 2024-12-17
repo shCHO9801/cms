@@ -1,10 +1,7 @@
 package com.zerobase.cms.order.domain.redis;
 
 import com.zerobase.cms.order.domain.product.AddProductCartForm;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.redis.core.RedisHash;
 
 import javax.persistence.Id;
@@ -20,6 +17,10 @@ public class Cart {
     private Long customerId;
     private List<Product> products = new ArrayList<>();
     private List<String> messages = new ArrayList<>();
+
+    public Cart(Long customerId) {
+        this.customerId = customerId;
+    }
 
     public void addMessage(String message) {
         messages.add(message);
